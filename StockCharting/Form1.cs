@@ -51,8 +51,9 @@ namespace StockCharting {
                 var x = chart1.ChartAreas[0].AxisX.PixelPositionToValue(e.X);
                 var xValues = chart1.Series[0].Points.Select(p => p.XValue).ToList();
                 var nearestIdx = getNearestIdx(x, xValues);
+                string annotation = Prompt.ShowDialog("Annotation", "");
                 var textAnnotation = new TextAnnotation {
-                    Text = "Hmmm..." // TODO: Prompt the user for the text.
+                    Text = annotation
                 };
                 textAnnotation.SetAnchor(chart1.Series[0].Points[nearestIdx]);
                 chart1.Annotations.Add(textAnnotation);
