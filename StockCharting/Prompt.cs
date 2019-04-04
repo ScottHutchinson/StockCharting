@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StockCharting {
+    /* From https://stackoverflow.com/a/5427121/5652483 */
+
     public static class Prompt {
         public static string ShowDialog(string text, string caption) {
             Form prompt = new Form() {
