@@ -35,9 +35,11 @@ namespace StockCharting {
                     return 0;
                 }
                 else {
-                    var lower = xValues[nextIdx - 1];
-                    var higher = xValues[nextIdx];
-                    var nearestIdx = Math.Abs(lower - x) < Math.Abs(higher - x) ? nextIdx - 1 : nextIdx;
+                    var lowerIdx = nextIdx - 1;
+                    var higherIdx = nextIdx;
+                    var lower = xValues[lowerIdx];
+                    var higher = xValues[higherIdx];
+                    var nearestIdx = Math.Abs(lower - x) < Math.Abs(higher - x) ? lowerIdx : higherIdx;
                     return nearestIdx;
                 }
             }
